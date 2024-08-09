@@ -41,7 +41,7 @@ function getCurrentUIValues() {
 function calculateMonthlyPayment(values) {
   const monthlyRate = (values.rate / 100) / 12;
   const n = Math.floor(values.years * 12);
-  const monthlyPayment = (monthlyRate * values.amount) / (1 - Math.pow((1 + monthlyRate), -n)).toFixed(2)
+  const monthlyPayment = parseInt((monthlyRate * values.amount) / (1 - Math.pow((1 + monthlyRate), -n)) * 100) / 100
   return monthlyPayment
 }
 
